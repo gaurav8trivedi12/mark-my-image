@@ -1,0 +1,102 @@
+COMMERCIAL LICENSE AGREEMENT
+Version 1.0 — [Month Year]
+
+This Commercial License Agreement ("Agreement") is a legal agreement between
+[Your Name or Company] ("Licensor") and the licensee ("Licensee") identified
+by the issued license key or purchase record.
+
+By installing, copying, or using the Software under this Agreement, the
+Licensee agrees to the following terms:
+
+---------------------------------------------------------------------
+1. DEFINITIONS
+---------------------------------------------------------------------
+
+1.1 "Software" refers to the React image annotation library distributed by
+    the Licensor, including source code, compiled binaries, documentation,
+    and related materials.
+
+1.2 "License Key" refers to a unique identifier (such as a UUID) issued by
+    the Licensor to the Licensee as proof of purchase and authorization.
+
+1.3 "Project" means a single application, website, or product that uses
+    the Software.
+
+---------------------------------------------------------------------
+2. GRANT OF LICENSE
+---------------------------------------------------------------------
+
+2.1 The Licensor hereby grants the Licensee a perpetual, non-exclusive,
+    non-transferable license to:
+
+    a. Use the Software in proprietary or closed-source projects;
+    b. Modify or remove the "Powered by markmyimage" watermark/logo;
+    c. Distribute the Software as part of the Licensee’s own products.
+
+2.2 This license applies only to the Licensee’s organization and cannot be
+    transferred, sublicensed, or shared with third parties without prior
+    written consent from the Licensor.
+
+---------------------------------------------------------------------
+3. RESTRICTIONS
+---------------------------------------------------------------------
+
+3.1 The Licensee may not redistribute, resell, or relicense the Software
+    as a standalone product or as part of a competing product.
+
+3.2 The Licensee must not claim ownership of the Software or misrepresent
+    its origin.
+
+3.3 The Licensee must ensure that the Software is used only in accordance
+    with this Agreement and the number of projects or developers specified
+    in the purchase terms.
+
+---------------------------------------------------------------------
+4. LICENSE VALIDATION
+---------------------------------------------------------------------
+
+4.1 The License Key issued to the Licensee may be verified by the Software
+    through an online validation endpoint or local signature verification.
+
+4.2 The Licensee agrees not to tamper with, disable, or circumvent license
+    validation mechanisms.
+
+---------------------------------------------------------------------
+5. TERMINATION
+---------------------------------------------------------------------
+
+5.1 This Agreement and the rights granted herein shall terminate immediately
+    if the Licensee fails to comply with its terms.
+
+5.2 Upon termination, the Licensee must cease using the Software and remove
+    all copies from its systems and products.
+
+---------------------------------------------------------------------
+6. WARRANTY AND LIABILITY
+---------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---------------------------------------------------------------------
+7. GOVERNING LAW
+---------------------------------------------------------------------
+
+This Agreement shall be governed by and construed in accordance with the
+laws of [Your Country/State], without regard to its conflict of law rules.
+
+---------------------------------------------------------------------
+8. CONTACT
+---------------------------------------------------------------------
+
+For licensing inquiries, please contact:
+https://markmyimage.com/license
+or email: support@markmyimage.com
+
+---------------------------------------------------------------------
+END OF TERMS
+---------------------------------------------------------------------

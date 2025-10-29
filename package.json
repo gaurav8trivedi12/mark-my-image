@@ -1,0 +1,59 @@
+{
+  "name": "mark-my-image",
+  "description": "A React component library for image annotation.",
+  "author": "Gaurav Trivedi <mktg.atmt@gmail.com>",
+  "license": "AGPL-3.0-only",
+  "homepage": "https://markmyimage.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaurav8trivedi12/mark-my-image.git"
+  },
+  "version": "0.1.0",
+  "private": false,
+  "main": "dist/mark-my-image.umd.js",
+  "module": "dist/mark-my-image.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/mark-my-image.es.js",
+      "require": "./dist/mark-my-image.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.15",
+    "@radix-ui/react-popover": "^1.1.15",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "fabric": "^6.7.1",
+    "lucide-react": "^0.546.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/fabric": "^5.3.10",
+    "@types/node": "^24.8.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
