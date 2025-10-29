@@ -154,6 +154,79 @@ Export the annotated image as a **data URL**.
 
 ---
 
+## 🧪 Local Development & Testing
+
+Because **mark-my-image** is a React component library, it needs to be tested inside another React application (like your main app or a demo project).  
+Here’s how you can set up local development and test changes quickly:
+
+### 1. Clone and Install
+
+Clone the repository and install dependencies:
+
+```
+
+git clone https://github.com/gaurav8trivedi12/mark-my-image.git
+cd mark-my-image
+npm install
+
+```
+
+### 2. Start Development Build
+
+Run the local development build in watch mode:
+
+```
+
+npm run dev
+
+```
+
+> This keeps the compiled files in sync as you modify the source code.
+
+### 3. Link the Library Locally
+
+Use `npm link` (or `yarn link`) to make your local build available globally:
+
+```
+
+npm link
+
+```
+
+Then, in your **consumer app** (where you want to test the library):
+
+```
+
+cd ../your-test-app
+npm link mark-my-image
+
+```
+
+This lets your test project use your **local version** of `mark-my-image` instead of the npm-published one.
+
+### 4. Import and Test
+
+In your test app, import the component as usual:
+
+```tsx
+import { AnnotationTool } from "mark-my-image";
+```
+
+Start your test app and verify changes live. Any edits you make to the library’s source (while `npm run dev` is running) will be reflected automatically.
+
+### 5. Clean Up After Testing
+
+Once done testing, unlink the local package:
+
+```
+npm unlink mark-my-image
+npm install mark-my-image
+```
+
+This restores the npm-published version.
+
+---
+
 ## 🧱 Built With
 
 - [React](https://reactjs.org/)
