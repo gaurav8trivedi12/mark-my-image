@@ -1,4 +1,4 @@
-Copyright (c) 2025 [Your Name or Company]
+Copyright (c) 2025 [Gaurav Trivedi]
 All rights reserved.
 
 This software is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0),
@@ -40,7 +40,7 @@ https://www.gnu.org/licenses/agpl-3.0.html
    from the copyright holder.
 
    Commercial license inquiries can be made at:
-   https://markmyimage.com/license
+   https://markmyimage.com/contact
 
 4. **No Warranty**
 

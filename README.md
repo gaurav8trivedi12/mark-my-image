@@ -41,7 +41,7 @@
 - 🔲 **Shapes** — Add rectangles and circles (filled or outlined).
 - 📝 **Text Tool** — Insert and edit text directly on your image.
 - 🖼️ **Image Upload** — Overlay additional images on the canvas.
-- 🕶️ **Blur Tool** — Easily obscure sensitive regions.
+<!-- - 🕶️ **Blur Tool** — Easily obscure sensitive regions. -->
 - 🎨 **Rich Styling Options**
   - Tailwind-based color palette
   - Adjustable stroke widths and styles (solid, dashed, dotted)
@@ -51,7 +51,7 @@
   - Select, move, scale, and rotate annotations
 - 🧭 **Draggable Toolbar** — Move the toolbar anywhere you like.
 - 💾 **Export** — Save annotated images as **PNG**, **JPEG**, or **SVG**.
-- 🌗 **Dark Mode Ready** — Automatically adapts to your app’s dark theme.
+<!-- - 🌗 **Dark Mode Ready** — Automatically adapts to your app’s dark theme. -->
 
 ---
 
@@ -265,7 +265,7 @@ See [LICENSE_SUMMARY.md](./LICENSE_SUMMARY.md) for full license.
 ### Attribution Exception
 
 You are permitted to use this software in proprietary or closed-source applications **without releasing your source code**, provided that the **"Powered by markmyimage" watermark** remains visible and functional in the UI.  
-Removal of the watermark requires a commercial license: [https://markmyimage.com/license](https://markmyimage.com/license).
+Removal of the watermark requires a commercial license: [COMMERCIAL_LICENSE.md](./COMMERCIAL_LICENSE.md).
 
 ---
 

@@ -59,4 +59,4 @@ The legally binding terms are found in the following documents:
 
 ---
 
-© 2025 [Your Name or Company] · [https://markmyimage.com](https://markmyimage.com)
+© 2025 [Gaurav Trivedi] · [https://markmyimage.com](https://markmyimage.com)

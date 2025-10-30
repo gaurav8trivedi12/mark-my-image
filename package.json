@@ -3,11 +3,18 @@
   "description": "A React component library for image annotation.",
   "author": "Gaurav Trivedi <mktg.atmt@gmail.com>",
   "license": "AGPL-3.0-only",
-  "homepage": "https://markmyimage.com",
+  "homepage": "https://github.com/gaurav8trivedi12/mark-my-image",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gaurav8trivedi12/mark-my-image.git"
   },
+  "keywords": [
+    "mark-my-image",
+    "image",
+    "highlight",
+    "react",
+    "annotate"
+  ],
   "version": "0.1.0",
   "private": false,
   "main": "dist/mark-my-image.umd.js",

@@ -1,8 +1,8 @@
 COMMERCIAL LICENSE AGREEMENT
-Version 1.0 — [Month Year]
+Version 1.0 — [Oct 2025]
 
 This Commercial License Agreement ("Agreement") is a legal agreement between
-[Your Name or Company] ("Licensor") and the licensee ("Licensee") identified
+[Gaurav Trivedi] ("Licensor") and the licensee ("Licensee") identified
 by the issued license key or purchase record.
 
 By installing, copying, or using the Software under this Agreement, the

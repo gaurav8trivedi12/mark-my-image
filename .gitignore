@@ -12,6 +12,7 @@ build/
 .next/
 .cache/
 .tmp/
+*.tgz
 
 # TypeScript
 *.tsbuildinfo
