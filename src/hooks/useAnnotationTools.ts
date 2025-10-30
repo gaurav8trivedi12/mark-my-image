@@ -23,7 +23,7 @@ export const useAnnotationTools = () => {
     backgroundImageRef,
     setActiveObject,
     deleteSelected,
-    // cloneSelected,
+    blurIntensity,
   } = useAnnotation();
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export const useAnnotationTools = () => {
         });
         break;
       case "blur":
-        cleanup = BlurTool(canvas, { saveState, setTool, backgroundImageRef });
+        cleanup = BlurTool(canvas, { saveState, setTool, backgroundImageRef, blurIntensity });
         break;
       case "shape":
         cleanup = ShapeTool(canvas, {

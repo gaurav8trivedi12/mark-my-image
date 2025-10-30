@@ -5,6 +5,7 @@ import {
   ArrowUpRight,
   Circle,
   Download,
+  Eraser,
   GripVertical,
   Highlighter,
   Image as ImageIcon,
@@ -34,7 +35,7 @@ export type EnabledTool =
   | "highlighter"
   | "line"
   | "shape"
-  // | 'blur'
+  | "blur"
   | "text"
   | "color"
   | "stroke"
@@ -59,7 +60,7 @@ const DEFAULT_TOOLS: EnabledTool[] = [
   "highlighter",
   "line",
   "shape",
-  // 'blur', // not working well currently
+  "blur",
   "text",
   "image",
   "color",
@@ -429,17 +430,19 @@ export const Toolbar = ({
       )}
       {/* --- END SHAPE  --- */}
 
-      {/* --- TODO: ADD BLUR BUTTON --- */}
-      {/* {isEnabled('blur') && (
-        <ToolButton
-          isActive={tool === 'blur'}
-          onClick={() => setTool('blur')}
-          aria-label="Blur tool"
-        >
-          <Eraser size={16} />
-        </ToolButton>
-      )} */}
-      {/* --- END BLUR BUTTON --- */}
+      {/* --- BLUR TOOL --- */}
+      {isEnabled('blur') && (
+        <TooltipWrapper label="Blur">
+          <ToolButton
+            isActive={tool === 'blur'}
+            onClick={() => setTool('blur')}
+            aria-label="Blur tool"
+          >
+            <Eraser size={16} />
+          </ToolButton>
+        </TooltipWrapper>
+      )}
+      {/* --- END BLUR TOOL --- */}
 
       {isEnabled("text") && (
         <TooltipWrapper label="Text">
