@@ -265,7 +265,7 @@ See [LICENSE_SUMMARY.md](./LICENSE_SUMMARY.md) for full license.
 ### Attribution Exception
 
 You are permitted to use this software in proprietary or closed-source applications **without releasing your source code**, provided that the **"Powered by markmyimage" watermark** remains visible and functional in the UI.  
-Removal of the watermark requires a commercial license: [COMMERCIAL_LICENSE.md](./COMMERCIAL_LICENSE.md).
+Removal of the watermark requires a commercial license: [COMMERCIAL_LICENSE.txt](./COMMERCIAL_LICENSE.txt).
 
 ---
 
