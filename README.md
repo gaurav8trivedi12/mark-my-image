@@ -1,8 +1,7 @@
 <p align="center">
-  <img src="./assets/gifs/hero-demo.gif" alt="mark-my-image Demo" width="800"/>
+  <img src="https://markmyimage.com/markmyimage-logo-transparent.png" alt="mark-my-image Demo" width="80"/>
 </p>
-
-<h1 align="center">🖊️ mark-my-image</h1>
+<h1 align="center">mark-my-image</h1>
 
 <p align="center">
   <strong>A lightweight, extensible React component for annotating images with pen, shapes, text, and more — fully customizable and dark mode ready!</strong>
@@ -36,11 +35,11 @@
 
 ## 🌟 Features
 
-- 🖋️ **Pen & Highlighter** — Freehand drawing with customizable colors and stroke widths.
-- 📏 **Lines & Arrows** — Draw straight lines or arrows for precise markup.
-- 🔲 **Shapes** — Add rectangles and circles (filled or outlined).
-- 📝 **Text Tool** — Insert and edit text directly on your image.
-- 🖼️ **Image Upload** — Overlay additional images on the canvas.
+- **Pen & Highlighter** — Freehand drawing with customizable colors and stroke widths.
+- **Lines & Arrows** — Draw straight lines or arrows for precise markup.
+- **Shapes** — Add rectangles and circles (filled or outlined).
+- **Text Tool** — Insert and edit text directly on your image.
+- **Image Upload** — Overlay additional images on the canvas.
 <!-- - 🕶️ **Blur Tool** — Easily obscure sensitive regions. -->
 - 🎨 **Rich Styling Options**
   - Tailwind-based color palette
@@ -49,7 +48,7 @@
   - Undo/Redo
   - Delete objects
   - Select, move, scale, and rotate annotations
-- 🧭 **Draggable Toolbar** — Move the toolbar anywhere you like.
+- **Draggable Toolbar** — Move the toolbar anywhere you like.
 - 💾 **Export** — Save annotated images as **PNG**, **JPEG**, or **SVG**.
 <!-- - 🌗 **Dark Mode Ready** — Automatically adapts to your app’s dark theme. -->
 
@@ -59,11 +58,11 @@
 
 ### Toolbar & Annotation Tools
 
-![Toolbar Screenshot](./assets/screenshots/toolbar.png)
+![Toolbar Screenshot](https://markmyimage.com/mark-my-image-example-3.png)
 
-### Example Annotation Workflow
+### Example
 
-![Annotation GIF](./assets/gifs/annotation-example.gif)
+![Screenshot](https://markmyimage.com/mark-my-image-example-1.png)
 
 ### Live Demo
 
@@ -227,16 +226,6 @@ This restores the npm-published version.
 
 ---
 
-## 🧱 Built With
-
-- [React](https://reactjs.org/)
-- [Fabric.js](http://fabricjs.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Radix UI](https://www.radix-ui.com/)
-- [Lucide React](https://lucide.dev/)
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome!
@@ -266,6 +255,16 @@ See [LICENSE_SUMMARY.md](./LICENSE_SUMMARY.md) for full license.
 
 You are permitted to use this software in proprietary or closed-source applications **without releasing your source code**, provided that the **"Powered by markmyimage" watermark** remains visible and functional in the UI.  
 Removal of the watermark requires a commercial license: [COMMERCIAL_LICENSE.txt](./COMMERCIAL_LICENSE.txt).
+
+---
+
+## 🧱 Built With
+
+- [React](https://reactjs.org/)
+- [Fabric.js](http://fabricjs.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [Lucide React](https://lucide.dev/)
 
 ---
 
