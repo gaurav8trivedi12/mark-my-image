@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <a href="https://markmyimage.com/demo" style="background-color:#4f46e5;color:white;padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;margin-right:10px;">
+  <a href="https://codesandbox.io/p/sandbox/mark-my-image-example-2lxykz" style="background-color:#4f46e5;color:white;padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;margin-right:10px;">
     Try Live Demo 🚀
   </a>
   <a href="#basic-usage" style="background-color:#10b981;color:white;padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;">
@@ -66,18 +66,18 @@
 
 ### Live Demo
 
-Try it out: [Live Demo Link](https://markmyimage.com/demo)
+Try it out: [Live Demo Link](https://codesandbox.io/p/sandbox/mark-my-image-example-2lxykz)
 
 ---
 
 ## 🧩 Basic Usage
 
-```tsx
+```jsx
 import React, { useRef } from "react";
-import { AnnotationTool, type AnnotationToolRef } from "mark-my-image";
+import { AnnotationTool } from "mark-my-image";
 
 function MyComponent() {
-  const annotationToolRef = useRef<AnnotationToolRef>(null);
+  const annotationToolRef = useRef(null);
   const screenshotUrl = "/path/to/image.png";
 
   const handleExport = () => {
