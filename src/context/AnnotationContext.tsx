@@ -48,9 +48,8 @@ interface AnnotationContextType {
   // cloneSelected: () => void;
   canUndo: boolean;
   canRedo: boolean;
-  // Optional: Add blur intensity state if you want it configurable later
-  // blurIntensity: number;
-  // setBlurIntensity: Dispatch<SetStateAction<number>>;
+  blurIntensity: number;
+  setBlurIntensity: Dispatch<SetStateAction<number>>;
   backgroundImageRef: RefObject<FabricImage | null>;
   shapeFill: boolean;
   setShapeFill: Dispatch<SetStateAction<boolean>>;
@@ -78,8 +77,7 @@ export const AnnotationProvider = ({ children }: AnnotationProviderProps) => {
   const [undoStack, setUndoStack] = useState<any[]>([]);
   const [redoStack, setRedoStack] = useState<any[]>([]);
   const [activeObject, setActiveObject] = useState<FabricObject | null>(null);
-  // TODO: blur tool implementation
-  // const [blurIntensity, setBlurIntensity] = useState<number>(10);
+  const [blurIntensity, setBlurIntensity] = useState<number>(0.2);
 
   const backgroundImageRef = useRef<FabricImage | null>(null);
 
@@ -326,9 +324,8 @@ export const AnnotationProvider = ({ children }: AnnotationProviderProps) => {
     canRedo: redoStack.length > 0,
     strokeType,
     setStrokeType,
-    // Optional: Add blur intensity to context value
-    // blurIntensity,
-    // setBlurIntensity,
+    blurIntensity,
+    setBlurIntensity,
     backgroundImageRef,
     shapeFill,
     setShapeFill,

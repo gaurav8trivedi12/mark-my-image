@@ -7,6 +7,7 @@ interface BlurToolOptions {
   saveState: () => void;
   setTool: Dispatch<SetStateAction<Tool>>;
   backgroundImageRef: RefObject<FabricImage | null>;
+  blurIntensity?: number;
 }
 
 function debounce<F extends (...args: any[]) => any>(func: F, waitFor: number) {
@@ -22,7 +23,7 @@ function debounce<F extends (...args: any[]) => any>(func: F, waitFor: number) {
 
 const BlurTool = (
   canvas: Canvas,
-  { saveState, setTool, backgroundImageRef }: BlurToolOptions
+  { saveState, setTool, backgroundImageRef, blurIntensity = 0.2 }: BlurToolOptions
 ): (() => void) => {
   console.log("%cBlurTool: Function executed.", "color: green;");
 
@@ -30,7 +31,6 @@ const BlurTool = (
   let startX: number, startY: number;
   let placeholderRect: Rect | null = null;
   let blurredImage: FabricImage | null = null;
-  const blurIntensity = 0.2; // Blur filter value 0-1
 
   // --- Helper to update crop ---
   const updateCrop = (region: FabricImage) => {

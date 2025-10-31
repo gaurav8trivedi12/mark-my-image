@@ -40,7 +40,7 @@
 - **Shapes** — Add rectangles and circles (filled or outlined).
 - **Text Tool** — Insert and edit text directly on your image.
 - **Image Upload** — Overlay additional images on the canvas.
-<!-- - 🕶️ **Blur Tool** — Easily obscure sensitive regions. -->
+- 🕶️ **Blur Tool** — Easily obscure sensitive regions.
 - 🎨 **Rich Styling Options**
   - Tailwind-based color palette
   - Adjustable stroke widths and styles (solid, dashed, dotted)
