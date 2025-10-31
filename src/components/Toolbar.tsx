@@ -76,6 +76,13 @@ const Separator = () => (
 
 const STROKE_WIDTHS = [2, 5, 10]; // Thin, Medium, Thick (adjust values as needed)
 
+// Shared classes for small popover/menu buttons to reduce duplication
+const menuActiveClass = "bg-blue-100 dark:bg-blue-900";
+const menuButtonBase =
+  "flex items-center justify-center rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600";
+const menuButton8 = `${menuButtonBase} h-8 w-8`;
+const menuButton6 = `${menuButtonBase} h-6 px-2`;
+
 interface TooltipWrapperProps {
   label: string;
   children: React.ReactNode;
@@ -304,10 +311,8 @@ export const Toolbar = ({
                   setLineType("line");
                   setTool("line");
                 }}
-                className={`flex items-center justify-center h-8 w-8 rounded hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 ${
-                  tool === "line" && lineType === "line"
-                    ? "bg-blue-100 dark:bg-blue-900"
-                    : ""
+                className={`${menuButton8} ${
+                  tool === "line" && lineType === "line" ? menuActiveClass : ""
                 }`}
                 aria-label="Draw line"
               >
@@ -319,10 +324,8 @@ export const Toolbar = ({
                   setLineType("arrow");
                   setTool("line");
                 }}
-                className={`flex items-center justify-center h-8 w-8 rounded hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 ${
-                  tool === "line" && lineType === "arrow"
-                    ? "bg-blue-100 dark:bg-blue-900"
-                    : ""
+                className={`${menuButton8} ${
+                  tool === "line" && lineType === "arrow" ? menuActiveClass : ""
                 }`}
                 aria-label="Draw arrow"
               >
@@ -366,9 +369,9 @@ export const Toolbar = ({
                   setShapeFill(false);
                   setTool("shape");
                 }}
-                className={`flex items-center justify-center h-8 w-8 rounded hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 ${
+                className={`${menuButton8} ${
                   tool === "shape" && shapeType === "rect" && !shapeFill
-                    ? "bg-blue-100 dark:bg-blue-900"
+                    ? menuActiveClass
                     : ""
                 }`}
                 aria-label="Draw rectangle outline"
@@ -382,9 +385,9 @@ export const Toolbar = ({
                   setShapeFill(true);
                   setTool("shape");
                 }}
-                className={`flex items-center justify-center h-8 w-8 rounded hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 ${
+                className={`${menuButton8} ${
                   tool === "shape" && shapeType === "rect" && shapeFill
-                    ? "bg-blue-100 dark:bg-blue-900"
+                    ? menuActiveClass
                     : ""
                 }`}
                 aria-label="Draw filled rectangle"
@@ -398,9 +401,9 @@ export const Toolbar = ({
                   setShapeFill(false);
                   setTool("shape");
                 }}
-                className={`flex items-center justify-center h-8 w-8 rounded hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 ${
+                className={`${menuButton8} ${
                   tool === "shape" && shapeType === "circle" && !shapeFill
-                    ? "bg-blue-100 dark:bg-blue-900"
+                    ? menuActiveClass
                     : ""
                 }`}
                 aria-label="Draw circle outline"
@@ -414,9 +417,9 @@ export const Toolbar = ({
                   setShapeFill(true);
                   setTool("shape");
                 }}
-                className={`flex items-center justify-center h-8 w-8 rounded hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 ${
+                className={`${menuButton8} ${
                   tool === "shape" && shapeType === "circle" && shapeFill
-                    ? "bg-blue-100 dark:bg-blue-900"
+                    ? menuActiveClass
                     : ""
                 }`}
                 aria-label="Draw filled circle"
@@ -517,10 +520,8 @@ export const Toolbar = ({
                   <button
                     key={`width-${width}`}
                     onClick={() => setStrokeWidth(width)}
-                    className={`h-6 flex items-center justify-center rounded px-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                      strokeWidth === width
-                        ? "bg-blue-100 dark:bg-blue-900"
-                        : ""
+                    className={`${menuButton6} ${
+                      strokeWidth === width ? menuActiveClass : ""
                     }`}
                     style={{ color: color }} // Use current color for preview
                     aria-label={`Set stroke width ${width}`}
@@ -539,8 +540,8 @@ export const Toolbar = ({
                   <button
                     key={`type-${type}`}
                     onClick={() => setStrokeType(type)}
-                    className={`h-6 flex items-center justify-center rounded px-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                      strokeType === type ? "bg-blue-100 dark:bg-blue-900" : ""
+                    className={`${menuButton6} ${
+                      strokeType === type ? menuActiveClass : ""
                     }`}
                     style={{ color: color }} // Use current color for preview
                     aria-label={`Set stroke style ${type}`}
