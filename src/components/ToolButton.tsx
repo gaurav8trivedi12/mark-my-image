@@ -11,7 +11,7 @@ interface ToolButtonProps {
 }
 
 export const baseClasses =
-  "w-7 h-7 flex justify-center items-center rounded-md transition-colors duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-1 dark:focus:ring-offset-gray-800/50 relative"; // Added relative for positioning active indicator potentially
+  "w-7 h-7 flex justify-center items-center rounded-md transition-colors duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-1 dark:focus:ring-offset-gray-800/50 relative !p-0"; // Added relative for positioning active indicator potentially
 
 export const defaultClasses =
   "!bg-transparent text-gray-700 hover:!bg-black/10 dark:text-gray-300 dark:hover:!bg-white/15";
