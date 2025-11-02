@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://markmyimage.com/markmyimage-logo-transparent.png" alt="mark-my-image Demo" width="80"/>
+  <img src="https://files.markmyimage.com/markmyimage-logo-transparent.png" alt="mark-my-image Demo" width="80"/>
 </p>
 <h1 align="center">mark-my-image</h1>
 
@@ -58,11 +58,11 @@
 
 ### Toolbar & Annotation Tools
 
-![Toolbar Screenshot](https://markmyimage.com/mark-my-image-example-3.png)
+![Toolbar Screenshot](https://files.markmyimage.com/mark-my-image-example-3.png)
 
 ### Example
 
-![Screenshot](https://markmyimage.com/mark-my-image-example-1.png)
+![Screenshot](https://files.markmyimage.com/mark-my-image-example-1.png)
 
 ### Live Demo
 
