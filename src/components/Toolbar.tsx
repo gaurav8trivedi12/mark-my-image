@@ -79,7 +79,7 @@ const STROKE_WIDTHS = [2, 5, 10]; // Thin, Medium, Thick (adjust values as neede
 // Shared classes for small popover/menu buttons to reduce duplication
 const menuActiveClass = "mmi:bg-blue-100 mmi:dark:bg-blue-900";
 const menuButtonBase =
-  "mmi:flex mmi:items-center mmi:justify-center mmi:rounded mmi:text-gray-700 mmi:dark:text-gray-200 mmi:hover:bg-gray-100 mmi:dark:hover:bg-gray-600";
+  "mmi:flex mmi:items-center mmi:justify-center mmi:rounded mmi:text-gray-700 mmi:dark:text-gray-200 mmi:hover:bg-gray-100 mmi:dark:hover:bg-gray-600 mmi:!p-0";
 const menuButton8 = `${menuButtonBase} mmi:h-8 mmi:w-8`;
 const menuButton6 = `${menuButtonBase} mmi:h-6 mmi:px-2`;
 
