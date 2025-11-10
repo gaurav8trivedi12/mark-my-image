@@ -276,6 +276,22 @@ export const AnnotationCanvas = ({ imageSource }: AnnotationCanvasProps) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Delete" || e.key === "Backspace") {
+        const canvas = canvasInstanceRef.current;
+        if (!canvas) return;
+
+        const currentActiveObject = canvas.getActiveObject();
+
+        // Check if an object is active AND if it's in editing mode
+        if (
+          currentActiveObject &&
+          (currentActiveObject.type === "i-text" ||
+            currentActiveObject.type === "textbox")
+        ) {
+          if (currentActiveObject && currentActiveObject.isEditing) {
+            return;
+          }
+        }
+
         deleteSelected();
       }
     };

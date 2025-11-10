@@ -38,21 +38,29 @@ const TextTool = (
     canvas.add(text);
     text.enterEditing();
     canvas.setActiveObject(text);
+    text.selectAll();
 
     text.on("editing:exited", () => {
+      // If the textbox is empty after editing, remove it
       if (text.text?.trim() === "") {
         canvas.remove(text);
       }
       saveState();
+      setTool("select");
     });
-
-    setTool("select");
   };
 
   canvas.on("mouse:down", onMouseDown);
 
   return () => {
     canvas.off("mouse:down", onMouseDown);
+    if (canvas) {
+      canvas.selection = true;
+      canvas.forEachObject((obj) => {
+        obj.selectable = true;
+        obj.evented = true;
+      });
+    }
   };
 };
 
