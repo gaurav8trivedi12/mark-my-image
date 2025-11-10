@@ -18,7 +18,3 @@
 .canvas-container {
   pointer-events: all;
 }
-
-button {
-  padding: 0;
-}

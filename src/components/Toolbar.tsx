@@ -79,7 +79,7 @@ const STROKE_WIDTHS = [2, 5, 10]; // Thin, Medium, Thick (adjust values as neede
 // Shared classes for small popover/menu buttons to reduce duplication
 const menuActiveClass = "mmi:bg-blue-100 mmi:dark:bg-blue-900";
 const menuButtonBase =
-  "mmi:flex mmi:items-center mmi:justify-center mmi:rounded mmi:text-gray-700 mmi:dark:text-gray-200 mmi:hover:bg-gray-100 mmi:dark:hover:bg-gray-600 mmi:!p-0";
+  "mmi:flex mmi:items-center mmi:justify-center mmi:rounded mmi:text-gray-700 mmi:dark:text-gray-200 mmi:hover:bg-gray-100 mmi:dark:hover:bg-gray-600 mmi:p-0!";
 const menuButton8 = `${menuButtonBase} mmi:h-8 mmi:w-8`;
 const menuButton6 = `${menuButtonBase} mmi:h-6 mmi:px-2`;
 
@@ -586,7 +586,7 @@ export const Toolbar = ({
                     return (
                       <button
                         key={`${name}-${shade}`}
-                        className={`mmi:w-5 mmi:h-5 mmi:rounded-sm mmi:border mmi:border-transparent mmi:focus:outline-none mmi:focus:ring-2 mmi:focus:ring-blue-500 mmi:focus:ring-offset-1 mmi:dark:focus:ring-offset-gray-700 ${
+                        className={`mmi:w-5 mmi:h-5 mmi:rounded-sm mmi:border mmi:border-transparent mmi:focus:outline-none mmi:focus:ring-2 mmi:focus:ring-blue-500 mmi:focus:ring-offset-1 mmi:dark:focus:ring-offset-gray-700 mmi:p-0! ${
                           color === hexColor
                             ? "mmi:ring-2 mmi:ring-blue-500 mmi:ring-offset-1 mmi:dark:ring-offset-gray-700"
                             : ""
@@ -604,7 +604,7 @@ export const Toolbar = ({
                 {EXTRA_COLORS.map((hexColor) => (
                   <button
                     key={hexColor}
-                    className={`mmi:w-5 mmi: h-5 mmi:rounded-sm mmi:border ${
+                    className={`mmi:w-5 mmi: h-5 mmi:rounded-sm mmi:border mmi:p-0! ${
                       hexColor == "#ffffff"
                         ? "mmi:border-gray-400 mmi:dark:border-gray-500"
                         : "mmi:border-transparent" // Border for white
@@ -697,7 +697,7 @@ export const Toolbar = ({
                 <button
                   key={format}
                   onClick={() => exportCanvas(format)} // Call export function with format
-                  className="mmi:p-2 mmi:text-center mmi:text-sm mmi:rounded-md mmi:hover:bg-gray-100 mmi:dark:text-gray-100 mmi:dark:hover:bg-gray-600 mmi:focus:outline-none mmi:focus:ring-1 mmi:focus:ring-blue-500"
+                  className="mmi:p-2! mmi:text-center mmi:text-sm mmi:rounded-md mmi:hover:bg-gray-100 mmi:dark:text-gray-100 mmi:dark:hover:bg-gray-600 mmi:focus:outline-none mmi:focus:ring-1 mmi:focus:ring-blue-500"
                 >
                   .{format.toLowerCase()}
                 </button>
