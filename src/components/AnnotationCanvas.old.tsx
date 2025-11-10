@@ -1,14 +1,15 @@
-import { useEffect, useRef } from 'react';
-import { Canvas, FabricImage } from 'fabric';
-import { useAnnotation } from '../context/AnnotationContext';
-import { useAnnotationTools } from '../hooks/useAnnotationTools';
+import { useEffect, useRef } from "react";
+import { Canvas, FabricImage } from "fabric";
+import { useAnnotation } from "../context/AnnotationContext";
+import { useAnnotationTools } from "../hooks/useAnnotationTools";
 
 interface AnnotationCanvasProps {
   imageUrl: string;
 }
 
 export const AnnotationCanvas = ({ imageUrl }: AnnotationCanvasProps) => {
-  const { setCanvas, saveState, setActiveObject, deleteSelected } = useAnnotation();
+  const { setCanvas, saveState, setActiveObject, deleteSelected } =
+    useAnnotation();
   useAnnotationTools();
 
   const canvasEl = useRef<HTMLCanvasElement | null>(null);
@@ -26,7 +27,9 @@ export const AnnotationCanvas = ({ imageUrl }: AnnotationCanvasProps) => {
         const container = canvasElement.parentElement;
         if (!container) return;
 
-        const img = await FabricImage.fromURL(imageUrl, { crossOrigin: 'anonymous' });
+        const img = await FabricImage.fromURL(imageUrl, {
+          crossOrigin: "anonymous",
+        });
         if (!img.width || !img.height) return;
 
         const scale = Math.min(
@@ -43,21 +46,25 @@ export const AnnotationCanvas = ({ imageUrl }: AnnotationCanvasProps) => {
         });
 
         img.set({ scaleX: scale, scaleY: scale });
-        
+
         // v6 FIX: Set the 'backgroundImage' property directly instead of calling a method.
         canvasInstance.backgroundImage = img;
         canvasInstance.renderAll();
 
-        canvasInstance.on('selection:created', (e) => setActiveObject(e.selected?.[0] || null));
-        canvasInstance.on('selection:updated', (e) => setActiveObject(e.selected?.[0] || null));
-        canvasInstance.on('selection:cleared', () => setActiveObject(null));
-        canvasInstance.on('object:modified', saveState);
+        canvasInstance.on("selection:created", (e) =>
+          setActiveObject(e.selected?.[0] || null)
+        );
+        canvasInstance.on("selection:updated", (e) =>
+          setActiveObject(e.selected?.[0] || null)
+        );
+        canvasInstance.on("selection:cleared", () => setActiveObject(null));
+        canvasInstance.on("object:modified", saveState);
 
         setCanvas(canvasInstance);
         canvasInstanceRef.current = canvasInstance;
         saveState();
       } catch (error) {
-        console.error('Error loading image into canvas:', error);
+        console.error("Error loading image into canvas:", error);
       }
     };
 
@@ -74,18 +81,18 @@ export const AnnotationCanvas = ({ imageUrl }: AnnotationCanvasProps) => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Delete' || e.key === 'Backspace') {
+      if (e.key === "Delete" || e.key === "Backspace") {
         deleteSelected();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [deleteSelected]);
 
   return (
-    <div className="canvas-wrapper w-full h-full flex justify-center items-center">
+    <div className="mmi:canvas-wrapper mmi:w-full mmi:h-full mmi:flex mmi:justify-center mmi:items-center">
       <canvas ref={canvasEl} />
     </div>
   );

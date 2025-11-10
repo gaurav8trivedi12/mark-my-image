@@ -19,15 +19,15 @@ export const ToolButtonCopy = ({
 }: ToolButtonProps) => {
   // Base classes - keep transparency
   const baseClasses =
-    "w-7 h-9 flex justify-center items-center rounded-md transition-colors duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-1 dark:focus:ring-offset-gray-800/50";
+    "mmi:w-7 mmi:h-9 mmi:flex mmi:justify-center mmi:items-center mmi:rounded-md mmi:transition-colors mmi:duration-150 mmi:ease-in-out mmi:disabled:opacity-50 mmi:disabled:cursor-not-allowed mmi:focus:outline-none mmi:focus:ring-2 mmi:focus:ring-blue-500/50 mmi:focus:ring-offset-1 mmi:dark:focus:ring-offset-gray-800/50";
 
   // Default state - transparent background, subtle text color
   const defaultClasses =
-    "bg-transparent text-gray-600 hover:bg-black/5 dark:text-gray-300 dark:hover:bg-white/10";
+    "mmi:bg-transparent mmi:text-gray-600 mmi:hover:bg-black/5 mmi:dark:text-gray-300 mmi:dark:hover:bg-white/10";
 
   // Active state - subtle semi-transparent background
   const activeClasses =
-    "bg-blue-500/15 text-blue-600 dark:bg-blue-400/20 dark:text-blue-200";
+    "mmi:bg-blue-500/15 mmi:text-blue-600 mmi:dark:bg-blue-400/20 mmi:dark:text-blue-200";
 
   return (
     <button

@@ -66,7 +66,6 @@ const AnnotationCore = ({
   useImperativeHandle(
     parentRef,
     () => ({
-      // Use parentRef here
       getCanvasDataURL: (format: ExportFormat = "png", options: any = {}) => {
         console.log(
           "getCanvasDataURL called inside imperative handle. Canvas ref:",
@@ -114,7 +113,7 @@ const AnnotationCore = ({
       >
         <Toolbar enabledTools={enabledTools} dragHandlers={dragHandlers} />
       </div>
-      {/* Canvas */}
+
       <AnnotationCanvas imageSource={imageSource} />
     </>
   );
@@ -147,7 +146,7 @@ export const AnnotationTool = ({
     const dragImage = new Image(1, 1);
     dragImage.src =
       "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-    event.dataTransfer.setDragImage(dragImage, -10, -10);
+    // event.dataTransfer.setDragImage(dragImage, -10, -10);
   };
 
   const handleDrag = (event: React.DragEvent<HTMLDivElement>) => {
@@ -173,21 +172,30 @@ export const AnnotationTool = ({
       left: newX,
       bottom: undefined,
       right: undefined,
-    }); // Update state
+    });
   };
 
   const handleDragEnd = (event: React.DragEvent<HTMLDivElement>) => {
-    console.log("Drag ended");
+    // console.log("Drag ended");
   };
 
   return (
     <AnnotationProvider>
       <div
         ref={containerRef}
-        className={`react-annotation-tool-container relative bg-white dark:bg-gray-800 overflow-scroll ${
+        className={`react-annotation-tool-container mmi:relative mmi:bg-white mmi:dark:bg-gray-800 mmi:overflow-scroll ${
           className || ""
         }`}
-        style={style}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          width: "100%",
+          height: "100%",
+          minHeight: "500px", // ensures visibility if parent has no height
+          maxHeight: "100vh", // prevents runaway scroll
+          ...style,
+        }}
       >
         <AnnotationCore
           imageSource={imageSource}
@@ -226,22 +234,21 @@ const AnnotationToolOld = ({
   const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
     if (!toolbarRef.current) return;
     const rect = toolbarRef.current.getBoundingClientRect();
-    // Use clientX/Y relative to the viewport
     dragOffset.current = {
       x: event.clientX - rect.left,
       y: event.clientY - rect.top,
     };
-    console.log(
-      `Drag Start - Offset: x=${dragOffset.current.x.toFixed(
-        0
-      )}, y=${dragOffset.current.y.toFixed(0)}`
-    ); // Debug Log
+    // console.log(
+    //   `Drag Start - Offset: x=${dragOffset.current.x.toFixed(
+    //     0
+    //   )}, y=${dragOffset.current.y.toFixed(0)}`
+    // );
 
     event.dataTransfer.effectAllowed = "move";
     const dragImage = new Image(1, 1);
     dragImage.src =
       "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-    event.dataTransfer.setDragImage(dragImage, -999, -999);
+    // event.dataTransfer.setDragImage(dragImage, -999, -999);
   };
 
   const handleDrag = (event: React.DragEvent<HTMLDivElement>) => {
@@ -255,7 +262,6 @@ const AnnotationToolOld = ({
       return;
 
     const containerRect = containerRef.current.getBoundingClientRect();
-    // Get toolbar dimensions *during* drag, as they might be stable now
     const toolbarWidth = toolbarRef.current.offsetWidth;
     const toolbarHeight = toolbarRef.current.offsetHeight;
 
@@ -269,7 +275,7 @@ const AnnotationToolOld = ({
     newY = Math.max(0, newY); // Top boundary
     newY = Math.min(newY, containerRect.height - toolbarHeight); // Bottom boundary
 
-    // console.log(`Dragging - Client:(${event.clientX},${event.clientY}), Container:(${containerRect.left},${containerRect.top}), Offset:(${dragOffset.current.x},${dragOffset.current.y}), New:(${newX.toFixed(0)},${newY.toFixed(0)}), Bounds:(${containerRect.width - toolbarWidth})`); // Debug Log
+    // console.log(`Dragging - Client:(${event.clientX},${event.clientY}), Container:(${containerRect.left},${containerRect.top}), Offset:(${dragOffset.current.x},${dragOffset.current.y}), New:(${newX.toFixed(0)},${newY.toFixed(0)}), Bounds:(${containerRect.width - toolbarWidth})`);
 
     // Update position using only top and left
     setToolbarPosition({
@@ -281,25 +287,17 @@ const AnnotationToolOld = ({
   };
 
   const handleDragEnd = (event: React.DragEvent<HTMLDivElement>) => {
-    console.log("Drag ended"); // Debug Log
-    // You could save the final toolbarPosition state here if persistence is needed
+    // console.log("Drag ended");
   };
 
   // --- Inner Component to Access Context & Handle Ref ---
-  // This component renders *inside* AnnotationProvider
   const AnnotationCore = () => {
-    // Hooks dependent on context are safe here
     const { canvasRef } = useAnnotation();
 
-    // Expose methods via the ref passed from the parent
     useImperativeHandle(
       ref,
       () => ({
         getCanvasDataURL: (format: ExportFormat = "png", options: any = {}) => {
-          console.log(
-            "getCanvasDataURL called inside imperative handle. Canvas ref:",
-            canvasRef.current
-          ); // Debug Log
           const canvas = canvasRef.current;
           if (!canvas) {
             console.error("getCanvasDataURL failed: Canvas ref is null.");
@@ -311,7 +309,6 @@ const AnnotationToolOld = ({
               quality: options.quality || 0.92,
               multiplier: options.multiplier || 1,
             });
-            console.log("getCanvasDataURL successful."); // Debug Log
             return dataUrl;
           } catch (error) {
             console.error(`Error getting canvas data URL as ${format}:`, error);
@@ -320,9 +317,8 @@ const AnnotationToolOld = ({
         },
       }),
       [canvasRef]
-    ); // Dependency: canvasRef
+    );
 
-    // Render the actual UI elements
     return (
       <>
         {/* Toolbar Wrapper */}
@@ -348,24 +344,21 @@ const AnnotationToolOld = ({
             dragHandlers={{ handleDragStart, handleDrag, handleDragEnd }}
           />
         </div>
-        {/* Canvas */}
+
         <AnnotationCanvas imageSource={imageSource} />
       </>
     );
   };
-  // --- End Inner Component ---
 
   return (
-    // Provider wraps the Inner component
     <AnnotationProvider>
       <div
         ref={containerRef}
-        className={`react-annotation-tool-container relative ${
+        className={`mmi:react-annotation-tool-container mmi:relative ${
           className || ""
         }`}
         style={style}
       >
-        {/* Render the inner component which handles context and ref */}
         <AnnotationCore />
       </div>
     </AnnotationProvider>

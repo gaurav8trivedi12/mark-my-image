@@ -142,7 +142,7 @@ export const AnnotationCanvas = ({ imageSource }: AnnotationCanvasProps) => {
 
         const scale = Math.min(
           container.offsetWidth / img.width,
-          container.offsetHeight / img.height,
+          // container.offsetHeight / img.height,
           1
         );
         console.log("Calculated scale:", scale);
@@ -302,7 +302,7 @@ export const AnnotationCanvas = ({ imageSource }: AnnotationCanvasProps) => {
   }, [deleteSelected]);
 
   return (
-    <div className="canvas-wrapper w-full h-full flex justify-center items-center">
+    <div className="mmi:canvas-wrapper mmi:w-full mmi:h-full mmi:flex mmi:justify-center mmi:items-center">
       <canvas ref={canvasEl} />
     </div>
   );

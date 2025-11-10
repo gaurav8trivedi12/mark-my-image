@@ -1,26 +1,7 @@
 @import "./tailwind.css";
 
 .react-annotation-tool-container {
-  @apply flex flex-col gap-2 w-full h-full;
-}
-
-.toolbar-container {
-  @apply flex items-center gap-1 bg-white p-2 rounded-lg shadow-md w-fit mx-auto;
-}
-
-.tool-button {
-  @apply w-9 h-9 flex justify-center items-center rounded-md text-gray-700 hover:bg-gray-100;
-}
-
-.tool-button.active {
-  @apply bg-blue-100 text-blue-600;
-}
-
-.undo-redo-button {
-  @apply w-8 h-8 flex justify-center items-center rounded-md text-gray-700 hover:bg-gray-100;
-}
-.undo-redo-button.disabled {
-  @apply text-gray-400 cursor-not-allowed;
+  @apply mmi:flex mmi:flex-col mmi:gap-2 mmi:w-full mmi:h-full;
 }
 
 .canvas-wrapper {
@@ -32,69 +13,8 @@
 }
 
 /* --- THIS IS THE FIX FOR THE DRAWING TOOLS --- */
-/* This ensures that the container Fabric.js generates around your canvas 
+/* This ensures that the container Fabric.js generates around the canvas 
    can always receive mouse clicks and drags. */
 .canvas-container {
   pointer-events: all;
-}
-
-/* --- UPDATED TOOLBAR STYLES --- */
-.toolbar-container {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 8px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* This is the fix for the icons. */
-.tool-button,
-.action-button,
-.popover-trigger {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  background-color: transparent;
-  cursor: pointer;
-  color: #343a40;
-  padding: 0;
-}
-
-.tool-button:hover,
-.action-button:hover,
-.popover-trigger:hover {
-  background-color: #f1f3f5;
-  color: #000;
-}
-
-.tool-button.active,
-.popover-trigger.active {
-  background-color: #e9ecef;
-  color: #000;
-}
-
-.action-button:disabled {
-  color: #ced4da;
-  cursor: not-allowed;
-  background-color: transparent;
-}
-
-.toolbar-separator {
-  width: 1px;
-  height: 24px;
-  background-color: #dee2e6;
-  margin: 0 6px;
-}
-.color-swatch {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  border: 1px solid #dee2e6;
-  cursor: pointer;
 }

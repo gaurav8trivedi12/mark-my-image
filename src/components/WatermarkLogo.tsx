@@ -18,7 +18,7 @@ const WatermarkLogo: React.FC<WatermarkLogoProps> = ({
   if (!show) return null;
 
   return (
-    <div className="absolute bottom-2 right-2 z-50">
+    <div className="mmi:absolute mmi:bottom-2 mmi:right-2 mmi:z-999">
       <Tooltip.Provider>
         <Tooltip.Root>
           <Tooltip.Trigger asChild>
@@ -29,7 +29,7 @@ const WatermarkLogo: React.FC<WatermarkLogoProps> = ({
               onClick={() =>
                 window.open(websiteUrl, "_blank", "noopener,noreferrer")
               }
-              className={`cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-200`}
+              className={`mmi:cursor-pointer mmi:opacity-70 mmi:hover:opacity-100 mmi:transition-opacity mmi:duration-200`}
               style={{ width: "2rem", height: "2rem" }}
             />
           </Tooltip.Trigger>
@@ -37,10 +37,10 @@ const WatermarkLogo: React.FC<WatermarkLogoProps> = ({
           <Tooltip.Portal>
             <Tooltip.Content
               side="top"
-              className="rounded bg-gray-800 px-2 py-1 text-xs text-white shadow-md"
+              className="mmi:rounded mmi:bg-gray-800 mmi:px-2 mmi:py-1 mmi:text-xs mmi:text-white mmi:shadow-md"
             >
               {tooltipText}
-              <Tooltip.Arrow className="fill-gray-800" />
+              <Tooltip.Arrow className="mmi:fill-gray-800" />
             </Tooltip.Content>
           </Tooltip.Portal>
         </Tooltip.Root>

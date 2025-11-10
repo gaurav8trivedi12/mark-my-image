@@ -71,17 +71,17 @@ const DEFAULT_TOOLS: EnabledTool[] = [
 ];
 
 const Separator = () => (
-  <div className="w-px h-4 bg-gray-500 dark:bg-gray-600 mx-1" />
+  <div className="mmi:w-px mmi:h-4 mmi:bg-gray-500 mmi:dark:bg-gray-600 mmi:mx-1" />
 );
 
 const STROKE_WIDTHS = [2, 5, 10]; // Thin, Medium, Thick (adjust values as needed)
 
 // Shared classes for small popover/menu buttons to reduce duplication
-const menuActiveClass = "bg-blue-100 dark:bg-blue-900";
+const menuActiveClass = "mmi:bg-blue-100 mmi:dark:bg-blue-900";
 const menuButtonBase =
-  "flex items-center justify-center rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600";
-const menuButton8 = `${menuButtonBase} h-8 w-8`;
-const menuButton6 = `${menuButtonBase} h-6 px-2`;
+  "mmi:flex mmi:items-center mmi:justify-center mmi:rounded mmi:text-gray-700 mmi:dark:text-gray-200 mmi:hover:bg-gray-100 mmi:dark:hover:bg-gray-600";
+const menuButton8 = `${menuButtonBase} mmi:h-8 mmi:w-8`;
+const menuButton6 = `${menuButtonBase} mmi:h-6 mmi:px-2`;
 
 interface TooltipWrapperProps {
   label: string;
@@ -93,11 +93,11 @@ const TooltipWrapper: React.FC<TooltipWrapperProps> = ({ label, children }) => (
       <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
       <Tooltip.Portal>
         <Tooltip.Content
-          className="z-[99999] rounded bg-gray-800 px-2.5 py-1.5 text-xs font-semibold text-white shadow-md dark:bg-gray-900"
+          className="mmi:z-[99999] mmi:rounded mmi:bg-gray-800 mmi:px-2.5 mmi:py-1.5 mmi:text-xs mmi:font-semibold mmi:text-white mmi:shadow-md mmi:dark:bg-gray-900"
           sideOffset={5}
         >
           {label}
-          <Tooltip.Arrow className="fill-gray-800 dark:fill-gray-900" />
+          <Tooltip.Arrow className="mmi:fill-gray-800 mmi:dark:fill-gray-900" />
         </Tooltip.Content>
       </Tooltip.Portal>
     </Tooltip.Root>
@@ -147,7 +147,7 @@ export const Toolbar = ({
     if (currentType === "dotted") borderStyle = "dotted";
     return (
       <div
-        className="w-full h-px border-current"
+        className="mmi:w-full mmi:h-px mmi:border-current"
         style={{ borderTopWidth: `${width}px`, borderStyle: borderStyle }}
       />
     );
@@ -229,7 +229,7 @@ export const Toolbar = ({
   };
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-1 bg-white/70 backdrop-blur-sm p-2 rounded-lg shadow-md w-fit max-w-full mx-auto dark:bg-gray-800/70 dark:backdrop-blur-sm relative group">
+    <div className="mmi:flex mmi:flex-wrap mmi:justify-center mmi:items-center mmi:gap-1 mmi:bg-white/70 mmi:backdrop-blur-sm mmi:p-2 mmi:rounded-lg mmi:shadow-md mmi:w-fit mmi:max-w-full mmi:mx-auto mmi:dark:bg-gray-800/70 mmi:dark:backdrop-blur-sm mmi:relative mmi:group">
       {/* --- DRAG HANDLE --- */}
       {/* Positioned absolutely or flexed at start/end */}
       {dragHandlers && (
@@ -238,7 +238,7 @@ export const Toolbar = ({
           onDragStart={dragHandlers.handleDragStart}
           onDrag={dragHandlers.handleDrag}
           onDragEnd={dragHandlers.handleDragEnd}
-          className="p-1 cursor-grab text-gray-600 hover:text-gray-600 dark:hover:text-gray-300"
+          className="mmi:p-1 mmi:cursor-grab mmi:text-gray-600 mmi:hover:text-gray-600 mmi:dark:text-gray-300 mmi:dark:hover:text-gray-300"
           aria-label="Drag toolbar"
         >
           <GripVertical size={16} />
@@ -301,7 +301,7 @@ export const Toolbar = ({
           </HoverCard.Trigger>
           <HoverCard.Portal>
             <HoverCard.Content
-              className="z-10 bg-white dark:bg-gray-700 rounded-md shadow-lg p-2 grid grid-cols-2 gap-1 w-fit"
+              className="mmi:z-10 mmi:bg-white mmi:dark:bg-gray-700 mmi:rounded-md mmi:shadow-lg mmi:p-2 mmi:grid mmi:grid-cols-2 mmi:gap-1 mmi:w-fit"
               sideOffset={5}
               align="start"
             >
@@ -358,7 +358,7 @@ export const Toolbar = ({
           </HoverCard.Trigger>
           <HoverCard.Portal>
             <HoverCard.Content
-              className="z-10 bg-white dark:bg-gray-700 rounded-md shadow-lg p-2 grid grid-cols-2 gap-1 w-fit"
+              className="mmi:z-10 mmi:bg-white mmi:dark:bg-gray-700 mmi:rounded-md mmi:shadow-lg mmi:p-2 mmi:grid mmi:grid-cols-2 mmi:gap-1 mmi:w-fit"
               sideOffset={5}
               align="start"
             >
@@ -497,7 +497,7 @@ export const Toolbar = ({
                 <ToolButton
                   isActive={false}
                   aria-label="Select stroke style"
-                  className="px-2 flex-col justify-center"
+                  className="mmi:px-2 mmi:flex-col mmi:justify-center"
                   style={{ color: color }}
                 >
                   {renderStrokePreview(strokeWidth, strokeType)}
@@ -507,15 +507,15 @@ export const Toolbar = ({
           </HoverCard.Trigger>
           <HoverCard.Portal>
             <HoverCard.Content
-              className="z-10 bg-white dark:bg-gray-700 rounded-md shadow-lg p-3 flex flex-col gap-3 w-32" // Adjust width
+              className="mmi:z-10 mmi:bg-white mmi:dark:bg-gray-700 mmi:rounded-md mmi:shadow-lg mmi:p-3 mmi:flex mmi:flex-col mmi:gap-3 mmi:w-32" // Adjust width
               sideOffset={5}
               align="start"
             >
               {/* Stroke Width Selection */}
-              <div className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+              <div className="mmi:text-sm mmi:font-medium mmi:text-gray-700 mmi:dark:text-gray-200 mmi:mb-1">
                 Width
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="mmi:flex mmi:flex-col mmi:gap-2">
                 {STROKE_WIDTHS.map((width) => (
                   <button
                     key={`width-${width}`}
@@ -532,10 +532,10 @@ export const Toolbar = ({
               </div>
 
               {/* Stroke Type Selection */}
-              <div className="text-sm font-medium text-gray-700 dark:text-gray-200 mt-2 mb-1">
+              <div className="mmi:text-sm mmi:font-medium mmi:text-gray-700 mmi:dark:text-gray-200 mmi:mt-2 mmi:mb-1">
                 Style
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="mmi:flex mmi:flex-col mmi:gap-2">
                 {(["solid", "dashed", "dotted"] as StrokeType[]).map((type) => (
                   <button
                     key={`type-${type}`}
@@ -564,7 +564,7 @@ export const Toolbar = ({
               <TooltipWrapper label="Color">
                 <ToolButton isActive={false} aria-label="Select color">
                   <div
-                    className="w-5 h-5 p-0 m-0 rounded-sm"
+                    className="mmi:w-5 mmi:h-5 mmi:p-0 mmi:m-0 mmi:rounded-sm"
                     style={{ background: color }}
                   ></div>
                 </ToolButton>
@@ -573,22 +573,22 @@ export const Toolbar = ({
           </HoverCard.Trigger>
           <HoverCard.Portal>
             <HoverCard.Content
-              className="z-10 bg-white dark:bg-gray-700 rounded-md shadow-lg p-2 flex flex-col gap-2"
+              className="mmi:z-10 mmi:bg-white mmi:dark:bg-gray-700 mmi:rounded-md mmi:shadow-lg mmi:p-2 mmi:flex mmi:flex-col mmi:gap-2"
               sideOffset={5}
               align="start"
             >
               {/* Iterate through color names */}
               {colorNames.map((name) => (
-                <div key={name} className="flex gap-1">
+                <div key={name} className="mmi:flex mmi:gap-1">
                   {" "}
                   {colorShades.map((shade) => {
                     const hexColor = TAILWIND_PALETTE[name][shade];
                     return (
                       <button
                         key={`${name}-${shade}`}
-                        className={`w-5 h-5 rounded-sm border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 dark:focus:ring-offset-gray-700 ${
+                        className={`mmi:w-5 mmi:h-5 mmi:rounded-sm mmi:border mmi:border-transparent mmi:focus:outline-none mmi:focus:ring-2 mmi:focus:ring-blue-500 mmi:focus:ring-offset-1 mmi:dark:focus:ring-offset-gray-700 ${
                           color === hexColor
-                            ? "ring-2 ring-blue-500 ring-offset-1 dark:ring-offset-gray-700"
+                            ? "mmi:ring-2 mmi:ring-blue-500 mmi:ring-offset-1 mmi:dark:ring-offset-gray-700"
                             : ""
                         }`}
                         style={{ backgroundColor: hexColor }}
@@ -600,17 +600,17 @@ export const Toolbar = ({
                 </div>
               ))}
               {/* Add black and white row */}
-              <div className="flex gap-1 border-t border-gray-200 dark:border-gray-600 pt-2 mt-1">
+              <div className="mmi:flex mmi:gap-1 mmi:border-t mmi:border-gray-200 mmi:dark:border-gray-600 mmi:pt-2 mmi:mt-1">
                 {EXTRA_COLORS.map((hexColor) => (
                   <button
                     key={hexColor}
-                    className={`w-5 h-5 rounded-sm border ${
+                    className={`mmi:w-5 mmi: h-5 mmi:rounded-sm mmi:border ${
                       hexColor == "#ffffff"
-                        ? "border-gray-400 dark:border-gray-500"
-                        : "border-transparent" // Border for white
-                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 dark:focus:ring-offset-gray-700 ${
+                        ? "mmi:border-gray-400 mmi:dark:border-gray-500"
+                        : "mmi:border-transparent" // Border for white
+                    } mmi:focus:outline-none mmi:focus:ring-2 mmi:focus:ring-blue-500 mmi:focus:ring-offset-1 mmi:dark:focus:ring-offset-gray-700 ${
                       color === hexColor
-                        ? "ring-2 ring-blue-500 ring-offset-1 dark:focus:ring-offset-gray-700"
+                        ? "mmi:ring-2 mmi:ring-blue-500 mmi:ring-offset-1 mmi:dark:focus:ring-offset-gray-700"
                         : "" // Highlight selected
                     }`}
                     style={{ backgroundColor: hexColor }}
@@ -620,10 +620,10 @@ export const Toolbar = ({
                     }`}
                   />
                 ))}
-                <div className="w-5 h-5"></div>
-                <div className="w-5 h-5"></div>
-                <div className="w-5 h-5"></div>
-                <div className="w-5 h-5"></div>
+                <div className="mmi:w-5 mmi:h-5"></div>
+                <div className="mmi:w-5 mmi:h-5"></div>
+                <div className="mmi:w-5 mmi:h-5"></div>
+                <div className="mmi:w-5 mmi:h-5"></div>
               </div>
             </HoverCard.Content>
           </HoverCard.Portal>
@@ -689,7 +689,7 @@ export const Toolbar = ({
           </HoverCard.Trigger>
           <HoverCard.Portal>
             <HoverCard.Content
-              className="z-10 bg-white dark:bg-gray-700 rounded-md shadow-lg p-2 flex flex-col gap-1 w-12"
+              className="mmi:z-10 mmi:bg-white mmi:dark:bg-gray-700 mmi:rounded-md mmi:shadow-lg mmi:p-2 mmi:flex mmi:flex-col mmi:gap-1 mmi:min-w-16"
               sideOffset={5}
               align="end"
             >
@@ -697,7 +697,7 @@ export const Toolbar = ({
                 <button
                   key={format}
                   onClick={() => exportCanvas(format)} // Call export function with format
-                  className="p-2 text-center text-sm rounded-md hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="mmi:p-2 mmi:text-center mmi:text-sm mmi:rounded-md mmi:hover:bg-gray-100 mmi:dark:text-gray-100 mmi:dark:hover:bg-gray-600 mmi:focus:outline-none mmi:focus:ring-1 mmi:focus:ring-blue-500"
                 >
                   .{format.toLowerCase()}
                 </button>
