@@ -15,7 +15,7 @@
     "react",
     "annotate"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "main": "dist/mark-my-image.umd.js",
   "module": "dist/mark-my-image.es.js",
